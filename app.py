@@ -14,6 +14,8 @@ app.config['SECRET_KEY'] = "secret"
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
     "DATABASE_URL", "postgresql:///adopt")
 
+toolbar = DebugToolbarExtension(app)
+
 connect_db(app)
 
 # Having the Debug Toolbar show redirects explicitly is often useful;
@@ -22,3 +24,9 @@ connect_db(app)
 # app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 
 toolbar = DebugToolbarExtension(app)
+
+@app.get('/')
+def show_homepage():
+    """ """
+
+    
