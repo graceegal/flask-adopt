@@ -34,7 +34,6 @@ class Pet(db.Model):
 
     photo_url = db.Column(
         db.Text,
-        nullable=False,
         default=''
     )
 

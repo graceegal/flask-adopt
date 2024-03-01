@@ -4,10 +4,28 @@
 
 {% block content %}
 
-  <div class="container">
-    <h1>Pets</h1>
+<div class="container">
+  <h1>Pets</h1>
 
-    
-  </div>
+  <ul>
+    {% for pet in pets %}
+    <li>
+
+      {% if pet.photo_url %}
+      <img src="{{pet.photo_url}}" alt="{{pet.name}}">
+
+
+      {% if pet.available %}
+      {{ pet.name }} is <em>available!</em>
+
+      {% else %}
+      {{ pet.name }} is <em>unavailable!</em>
+
+      {% endblock %}
+
+    </li>
+  </ul>
+
+</div>
 
 {% endblock %}
