@@ -13,18 +13,22 @@
 
       {% if pet.photo_url %}
       <img src="{{pet.photo_url}}" alt="{{pet.name}}">
-
+      {% endif %}
 
       {% if pet.available %}
-      {{ pet.name }} is <em>available!</em>
+      <a href="/{pet.id}">{{ pet.name }}</a> is <em>available!</em>
 
       {% else %}
       {{ pet.name }} is <em>unavailable!</em>
 
-      {% endblock %}
+      {% endif %}
+
+      {% endfor %}
 
     </li>
   </ul>
+
+  <a href="/add" class="btn btn-primary">Add a Pet</a>
 
 </div>
 
